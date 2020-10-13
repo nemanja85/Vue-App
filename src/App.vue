@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/formulate">Vue Form</router-link> |
+      <router-link to="/formulate">Registration</router-link> |
       <router-link to="/formgenerator">Vue Form Generator</router-link>
     </div>
     <router-view/>
@@ -20,8 +20,11 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+}
+
+#app h1, #app h2, #app helloworld {
+  text-align: center;
 }
 
 #nav {
