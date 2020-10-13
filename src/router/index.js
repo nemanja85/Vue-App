@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Formulate from '../views/VueFormulate.vue'
-import FormGenerator from  '../views/VueFormGenerator'
+import Register from '../views/Register.vue' 
+import Login from '../views/Login.vue'
 
 Vue.use(VueRouter)
 
@@ -14,13 +14,13 @@ const routes = [
   },
   {
     path: '/registration',
-    name: 'Formulate',
-    component: Formulate
+    name: 'Register',
+    component: Register
   },
   {
-    path: '/formgenerator',
-    name: 'VueFormGenerator',
-    component: FormGenerator
+    path: '/login',
+    name: 'Login',
+    component: Login
   }
 ]
 

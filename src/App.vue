@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/registration">Registration</router-link> |
-      <router-link to="/formgenerator">Vue Form Generator</router-link>
+      <router-link to="/login">Login</router-link>
     </div>
     <router-view/>
   </div>
@@ -23,7 +23,7 @@ export default {
   color: #2c3e50;
 }
 
-#app h1, #app h2, #app helloworld {
+#app h1, #app h2, #app nav {
   text-align: center;
 }
 
