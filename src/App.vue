@@ -23,7 +23,7 @@ export default {
   color: #2c3e50;
 }
 
-#app h1, #app h2, #app nav {
+#app h1, #app h2, #app #nav {
   text-align: center;
 }
 
@@ -44,6 +44,21 @@ export default {
 #nav a.router-link-exact-active {
   text-decoration: none;
   color: crimson;
+}
+
+.inputs {
+  background-color: white;
+  max-width: 20em;
+  padding: 2em;
+  margin: 6.5em auto 2em auto;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+}
+pre {
+  display: block;
+  background-color: #e7f6ef;
+  padding: .25em;
+  border-radius: .25em;
 }
 
 </style>
