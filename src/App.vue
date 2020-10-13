@@ -2,11 +2,18 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/formulate">Vue Form</router-link> |
+      <router-link to="/formgenerator">Vue Form Generator</router-link>
     </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script>
 
 <style>
 #app {
@@ -18,15 +25,23 @@
 }
 
 #nav {
+  background-color: #2c3e50;
+  color: #fff;
   padding: 30px;
+  margin-bottom: 2em;
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  font-weight: 700;
+  text-decoration: none;
+  color:#fff;
+  padding: 1em;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  text-decoration: none;
+  color: crimson;
 }
+
 </style>
+
