@@ -6,7 +6,10 @@ import store from './store'
 import './assets/formulate.css'
 import VueFormulate from '@braid/vue-formulate'
 
-Vue.use(VueFormulate)
+import VueFormGenerator from 'vue-form-generator'
+import 'vue-form-generator/dist/vfg.css'
+
+Vue.use(VueFormulate, VueFormGenerator)
 
 Vue.config.productionTip = false
 
