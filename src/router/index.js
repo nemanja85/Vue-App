@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: '/formgenerator',
-    name: 'FormGenerator',
+    name: 'VueFormGenerator',
     component: FormGenerator
   }
 ]
