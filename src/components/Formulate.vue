@@ -1,11 +1,9 @@
 <template>
-    <div class="formulate">
-
+    <div>
+        <h2>Vue form Formulate</h2>
     </div>
 </template>
 
 <script>
-export default {
-    name: 'Formulate'
-}
+export default {}
 </script>
