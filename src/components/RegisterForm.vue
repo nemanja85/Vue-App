@@ -1,69 +1,83 @@
 <template>
-    <div class="container-fluid">
-            <FormulateForm class="register-form" v-model="formValues" @submit="handleSubmit">
-                    <h2 class="form-title">Register</h2>
-                    <p>Testing Vue Formulate form plugin</p>
-                    <FormulateInput
-                name="name"
-                type="text"
-                label="Your name"
-                placeholder="Your name"
-                validation="required"
-                />
-                <FormulateInput
-                name="email"
-                type="email"
-                label="Email address"
-                placeholder="Email address"
-                validation="required|email"
-                />
-                <div class="double-wide">
-                <FormulateInput
-                    name="password"
-                    type="password"
-                    label="Password"
-                    placeholder="Your password"
-                    validation="required"
-                />
-                <FormulateInput
-                    name="password_confirm"
-                    type="password"
-                    label="Confirm your password"
-                    placeholder="Confirm password"
-                    validation="required|confirm"
-                    validation-name="Confirmation"
-                />
-                </div>
-                <FormulateInput
-                type="submit"
-                label="Register"
-                />
-                <pre
-                class="code"
-                v-text="formValues"
-                />
-            </FormulateForm>
-    </div>
+  <div class="container-fluid">
+    <FormulateForm class="register-form" @submit="handleSubmit">
+      <h2 class="form-title">Register</h2>
+      <p>Testing Vue Formulate form plugin</p>
+      <FormulateInput
+        name="name"
+        type="text"
+        v-model="name"
+        label="Your name"
+        placeholder="Your name"
+        validation="required"
+      />
+      <FormulateInput
+        name="email"
+        type="email"
+        v-model="email"
+        label="Email address"
+        placeholder="Email address"
+        validation="required|email"
+      />
+      <div class="double-wide">
+        <FormulateInput
+          name="password"
+          type="password"
+          v-model="password"
+          label="Password"
+          placeholder="Your password"
+          validation="required"
+        />
+        <FormulateInput
+          name="password_confirm"
+          type="password"
+          v-model="password_confirm"
+          label="Confirm your password"
+          placeholder="Confirm password"
+          validation="required|confirm"
+          validation-name="Confirmation"
+        />
+      </div>
+      <FormulateInput type="submit" label="Register" />
+    </FormulateForm>
+  </div>
 </template>
 
 <script>
+import firebase from "firebase";
 export default {
-    data: () => ({
-        formValues: {}
-    }),
-    methods: {
-        handleSubmit() {
-            console.log(this.formValues)
-        }
+  data: () => ({
+    name: "",
+    email: "",
+    password: "",
+    password_confirm: "",
+  }),
+  mounted: () => {
+    if (firebase.auth().currentUser) {
+      this.$router.replace("home");
     }
-}
+  },
+  methods: {
+    handleSubmit() {
+      console.log(
+        this.name +
+          "" +
+          this.email +
+          "" +
+          this.password +
+          "" +
+          this.password_confirm
+      );
+    },
+  },
+};
 </script>
 
 <style scoped>
 .register-form {
   padding: 2em;
   border: 1px solid #a8a8a8;
-  border-radius: .5em;
+  border-radius: 0.5em;
   max-width: 500px;
   box-sizing: border-box;
 }
@@ -79,13 +93,13 @@ export default {
   }
   .double-wide .formulate-input {
     flex-grow: 1;
-    width: calc(50% - .5em);
+    width: calc(50% - 0.5em);
   }
   .double-wide .formulate-input:first-child {
-    margin-right: .5em;
+    margin-right: 0.5em;
   }
   .double-wide .formulate-input:last-child {
-    margin-left: .5em;
+    margin-left: 0.5em;
   }
 }
 </style>
