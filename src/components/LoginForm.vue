@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {fb} from "firebase"
+import firebase from "firebase"
 export default {
   data: () => ({
     email: "",
@@ -30,11 +30,11 @@ export default {
   }),
   methods: {
     login() {
-      fb
+      firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then((user) =>{
-            console.log(user)
+        .then(() =>{
+            this.$router.replace('/');
         })
         .catch(function (error) {
           console.log( "Unable to login: " + error.message)

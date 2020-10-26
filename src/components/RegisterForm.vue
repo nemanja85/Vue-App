@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import {fb} from 'firebase';
+import firebase from 'firebase';
 export default {
   data: () => ({
     name: "",
@@ -54,11 +54,11 @@ export default {
   }),
   methods: {
     handleSubmit() {
-      fb
+      firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then((user) =>{
-            console.log(user)
+        .then(() =>{
+            this.$router.replace('/');
         })
         .catch(function (error) {
           console.log("Unable to register the user :" + error.message)
