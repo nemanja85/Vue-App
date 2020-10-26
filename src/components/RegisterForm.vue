@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import {fb} from 'firebase';
 export default {
   data: () => ({
     name: "",
@@ -54,7 +54,7 @@ export default {
   }),
   methods: {
     handleSubmit() {
-      firebase
+      fb
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then((user) =>{

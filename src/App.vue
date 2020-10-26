@@ -3,16 +3,29 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/registration">Registration</router-link> |
-      <router-link to="/login">Login</router-link>
+      <router-link to="/login">Login</router-link> |
+      <a href="#" @click="logout">Logout</a>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
+import firebase from "firebase";
 export default {
-  name: 'App'
-}
+  name: "App",
+  methods: {
+    logout() {
+      firebase.auth().signOut()
+      .then(() => {
+        this.$router.replace('/');
+      })
+      .catch((err) =>{
+        console.log(err)
+      });
+    },
+  },
+};
 </script>
 
 <style>
@@ -23,7 +36,9 @@ export default {
   color: #2c3e50;
 }
 
-#app h1, #app h2, #app #nav {
+#app h1,
+#app h2,
+#app #nav {
   text-align: center;
 }
 
@@ -37,7 +52,7 @@ export default {
 #nav a {
   font-weight: 700;
   text-decoration: none;
-  color:#fff;
+  color: #fff;
   padding: 1em;
 }
 
@@ -57,9 +72,8 @@ export default {
 pre {
   display: block;
   background-color: #e7f6ef;
-  padding: .25em;
-  border-radius: .25em;
+  padding: 0.25em;
+  border-radius: 0.25em;
 }
-
 </style>
 

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import firebase from "firebase"
+import {fb} from "firebase"
 export default {
   data: () => ({
     email: "",
@@ -30,7 +30,7 @@ export default {
   }),
   methods: {
     login() {
-      firebase
+      fb
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then((user) =>{
