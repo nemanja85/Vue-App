@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from 'firebase';
 export default {
   data: () => ({
     name: "",
@@ -52,11 +52,6 @@ export default {
     password: "",
     password_confirm: "",
   }),
-  mounted: () => {
-    if (firebase.auth().currentUser) {
-      this.$router.replace("home");
-    }
-  },
   methods: {
     handleSubmit() {
       firebase
