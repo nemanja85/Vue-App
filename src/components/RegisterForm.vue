@@ -59,15 +59,15 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log(
-        this.name +
-          "" +
-          this.email +
-          "" +
-          this.password +
-          "" +
-          this.password_confirm
-      );
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(this.email, this.password)
+        .then((user) =>{
+            console.log(user)
+        })
+        .catch(function (error) {
+          console.log("Unable to register the user :" + error.message)
+        });
     },
   },
 };
