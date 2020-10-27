@@ -59,7 +59,7 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(() =>{
-            this.$router.replace('/');
+            this.$router.replace({name: "Login"});
         })
         .catch(function (error) {
           console.log("Unable to register the user :" + error.message)

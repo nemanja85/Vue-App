@@ -18,7 +18,7 @@ export default {
     logout() {
       firebase.auth().signOut()
       .then(() => {
-        this.$router.replace('/');
+        this.$router.replace({name: "login"});
       })
       .catch((err) =>{
         console.log(err)
