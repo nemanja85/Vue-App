@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Register from '../views/Register.vue' 
 import Login from '../views/Login.vue'
-import Currency from '../views/Currency.vue'
 
 Vue.use(VueRouter)
 
@@ -29,7 +28,7 @@ const routes = [
   {
     path: '/currency',
     name: 'Currency',
-    component: Currency
+    component: () => import(/* webpackChunkName: "currency" */ '../views/Currency.vue')
   }
 ]
 
