@@ -35,7 +35,7 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() =>{
-            this.$router.replace({name:"Home"});
+            this.$router.replace({name:"Currency"});
         })
         .catch(function (error) {
           console.log( "Unable to login: " + error.message)
