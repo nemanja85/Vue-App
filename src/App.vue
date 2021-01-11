@@ -2,6 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
+      <router-link to="/currency">Currency</router-link> |
       <router-link to="/registration">Registration</router-link> |
       <router-link to="/login">Login</router-link> |
       <a href="#" @click="logout">Logout</a>

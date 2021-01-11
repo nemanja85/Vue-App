@@ -24,6 +24,10 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/currency',
+    name: 'Currency',
   }
 ]
 
